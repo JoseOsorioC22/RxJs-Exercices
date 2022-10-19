@@ -1,0 +1,10 @@
+La programacion ractiva contiene: 
+
+Observer pattern -> notificar cuando suceden cambios
+
+Iterator pattern -> Poder ejecutar operaciones secuenciales
+
+programacion funcional -> tener funciones con tareas especificas que reciban argumentos 
+y no muten la información. 
+
+* Es una buena practica identificar los observables con un simbolo de dolar: $ 
