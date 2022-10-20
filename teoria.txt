@@ -8,3 +8,15 @@ programacion funcional -> tener funciones con tareas especificas que reciban arg
 y no muten la información. 
 
 * Es una buena practica identificar los observables con un simbolo de dolar: $ 
+
+Subject: es un tipo especial de observable, pueden haber varias suscripciones
+y les emitirá la misma información.
+
+Caracteristicas: 
+- casteo multiple
+- tambien es un observer 
+- Next, error, complete
+
+- Cuando la data es producida por el observable en si mismo se le conoce como
+un cold observable, mientras que cuando es producida fuera del observable es 
+llamado hot observable, 
