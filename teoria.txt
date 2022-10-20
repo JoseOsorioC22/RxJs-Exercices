@@ -19,4 +19,8 @@ Caracteristicas:
 
 - Cuando la data es producida por el observable en si mismo se le conoce como
 un cold observable, mientras que cuando es producida fuera del observable es 
-llamado hot observable, 
+llamado hot observable. 
+
+En Rx Js, cuando importamos algun elemento de una clase, si pertenece al paquete 
+raiz RxJs, es porque son herramientas directamente ligadas a la creacion de 
+observables. 
