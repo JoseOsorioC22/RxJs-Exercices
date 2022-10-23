@@ -1,7 +1,7 @@
 import { fromEvent } from "rxjs";
 
 /**
- * eventos del DOM
+ * Observable que trabaja con eventos del DOM
  */
 
 const eve1$ = fromEvent<MouseEvent>(document, 'click');
