@@ -1,5 +1,5 @@
 import { range, fromEvent } from 'rxjs';
-import { map, pluck } from 'rxjs/operators'
+import { map, mapTo, pluck } from 'rxjs/operators'
 
 /**
  * Map: realiza una lectura de un flujo 
@@ -51,3 +51,17 @@ keyUp$
     } ) )
 .subscribe( (data) => console.log('imprimiendo la base uri con map' , data)); 
 
+
+/**
+ * El MapTo sirve para tomar una emisión del observable y
+ *  transformarla en lo que tu quieras, básicamente una constante.
+ *  Por ejemplo, imaginate que un posteo HTTP se ejecute correctamente
+ *  pero la respuesta cambió eventualmente en el backend, y esto 
+ * está rompiendo tu código en el front-end, entonces usas el mapTo, 
+ * emites la respuesta que necesitas y resuelves el problema con un simple operador.
+ * (aunque actualmente está @deprecated )
+ */
+const keyUpMapTo$ = keyUp$
+.pipe(mapTo('tecla presionada')); 
+
+keyUpMapTo$.subscribe( key => console.log( 'mapToKey', key))
