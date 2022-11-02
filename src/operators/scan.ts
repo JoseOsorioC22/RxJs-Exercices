@@ -13,3 +13,33 @@ const totalAcomulador = (acc, cur) => acc + cur;
 from(numeros)
 .pipe(scan(totalAcomulador,0))
 .subscribe( dato => console.log(dato)); 
+
+
+// redux pattern 
+
+interface Usuario{
+    id?: string,
+    autenticado?:boolean,
+    token?: string,
+    edad?: number
+}
+
+
+const user: Usuario[] = [
+    {id: "223", autenticado: true , token: "JJKSKs"},
+    {id: "223", autenticado: false , token: ""},
+    {id: "223", autenticado: false , token: ""}
+]
+
+
+const state$ = from(user)
+.pipe(
+    scan(  (acc, cur) =>
+    {
+        return { ...acc , ...cur}
+    } )
+); 
+
+
+state$.subscribe(console.log)
+
