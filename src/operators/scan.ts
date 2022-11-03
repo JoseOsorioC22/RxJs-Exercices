@@ -1,4 +1,4 @@
-import { from, scan } from "rxjs";
+import { from, map, scan } from "rxjs";
 
 const numeros = [1,11,8,7,9]; 
 
@@ -34,12 +34,16 @@ const user: Usuario[] = [
 
 const state$ = from(user)
 .pipe(
-    scan(  (acc, cur) =>
+    scan<Usuario>(  (acc, cur) =>
     {
         return { ...acc , ...cur}
     } )
 ); 
 
+const id$= state$.pipe(
+    map( state => state.id)
+)
 
-state$.subscribe(console.log)
+
+id$.subscribe(console.log)
 
